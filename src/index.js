@@ -1,15 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import ReactDom from 'react-dom';
+import './App.css';
 import App from './App'
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-const store = applyMiddleware()(createStore);
-
-ReactDOM.render(
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux'
+import store from "./store";
+ReactDom.render(
   <Provider store={store}>
-    <App />
-  </Provider>
-  , document.getElementById('root'));
-
-
+    <BrowserRouter><App/></BrowserRouter>
+  </Provider>,
+  document.getElementById('root'));
