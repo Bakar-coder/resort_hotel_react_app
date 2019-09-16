@@ -1,23 +1,32 @@
 import React, { Component } from 'react';
-import logo from "../../images/logo.svg";
 import { FaAlignRight } from  'react-icons/fa'
+import {bindActionCreators} from "redux";
+import { connect } from "react-redux";
+import { handleToggle } from '../../actions'
 
 class Navbar extends Component{
-  state = {
-    isOpen: false
-  };
+  componentDidMount() {
+    this.setState({
+      isOpen: this.props.data.navToggle
+    })
+  }
 
-  handleToggle = () => {
-    this.setState({ isOpen: !this.state.isOpen })
-  };
-
- render() {
-   return (
-     <div className="navbar">
-
-     </div>
-   );
- }
+  render(){
+    console.log(this.state);
+    return (
+      <div className="navbar">
+        <FaAlignRight />
+      </div>
+    )
+  }
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+  data: state
+});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({handleToggle}, dispatch)
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
