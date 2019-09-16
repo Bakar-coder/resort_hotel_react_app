@@ -1,7 +1,9 @@
 import {IS_OPEN} from "../types";
 
 
-export const handleToggle = isOpen => ({
-  type: IS_OPEN,
-  payload:isOpen
-});
+export const handleToggle = isOpen => {
+  return {
+    type: IS_OPEN,
+    payload:isOpen
+  }
+};

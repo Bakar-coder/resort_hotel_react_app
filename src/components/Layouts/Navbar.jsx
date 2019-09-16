@@ -1,32 +1,42 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { FaAlignRight } from  'react-icons/fa'
-import {bindActionCreators} from "redux";
-import { connect } from "react-redux";
-import { handleToggle } from '../../actions'
+import logo from '../../images/logo.svg'
+import {Link} from "react-router-dom";
 
-class Navbar extends Component{
-  componentDidMount() {
-    this.setState({
-      isOpen: this.props.data.navToggle
+const Navbar = (props) => {
+  const [state, setSate] = useState({
+    isOpen : false
+  });
+  const {isOpen} = state;
+
+  const onToggle = () => {
+    setSate({
+      isOpen: !isOpen
     })
-  }
+  };
 
-  render(){
-    console.log(this.state);
-    return (
+  const navLinksClasses = "nav-links ";
+
+  return (
       <div className="navbar">
-        <FaAlignRight />
+        <div className="nav-center">
+          <div className="nav-header">
+            <Link to="/">
+              <img src={logo} alt="Logo"/>
+            </Link>
+            <button type="button" className="nav-btn" >
+              <FaAlignRight className="nav-icon" onClick={onToggle} />
+            </button>
+          </div>
+        </div>
+        <ul className={isOpen ? navLinksClasses + "show-nav" : navLinksClasses }>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/rooms">Rooms</Link></li>
+        </ul>
       </div>
     )
-  }
-}
-
-const mapStateToProps = state => ({
-  data: state
-});
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({handleToggle}, dispatch)
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+
+
+export default Navbar;
