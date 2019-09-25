@@ -1,27 +1,32 @@
-import React, {Component, Fragment} from 'react';
-import { Switch, Route} from 'react-router-dom';
-import Home from "./components/pages/Home";
-import Rooms from "./components/pages/Rooms";
-import SingleRoom from "./components/pages/SingleRoom";
-import PageNotFound from "./components/pages/404";
-import Navbar from "./components/Layouts/Navbar";
+import React, {Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {movies, genres} from './actions';
 
 class App extends Component {
+  componentDidMount() {
+    this.setState({
+      movies, genres
+    })
+  }
+
   render() {
+    console.log(this.state);
     return (
       <Fragment>
-        <Navbar/>
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/rooms" component={Rooms}/>
-          <Route exact path="/rooms/:slug" component={SingleRoom}/>
-         <Route component={PageNotFound} />
-        </Switch>
+        <h3>App</h3>
       </Fragment>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  genres: state.genres.genres,
+  movies: state.movies.movies
+});
 
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({movies, genres}, dispatch)
+};
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

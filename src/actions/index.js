@@ -1,9 +1,5 @@
-import {IS_OPEN} from "../types";
+import { getMovies } from '../services/fakeMovieService';
+import { getGenres } from '../services/fakeGenreService';
 
-
-export const handleToggle = isOpen => {
-  return {
-    type: IS_OPEN,
-    payload:isOpen
-  }
-};
+export const movies = getMovies();
+export const genres = getGenres();

@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
-import authReducer from "./authReducer";
-import navbarReducer from "./navbarReducer";
-const rootReducer = combineReducers({
-  auth: authReducer,
-  navToggle: navbarReducer
+import { combineReducers } from 'redux';
+import movies from './moviesReducer';
+import genres from './genreReducer';
+const RootReducer = combineReducers({
+  movies, genres
 });
-export default rootReducer;
+
+export default RootReducer;
