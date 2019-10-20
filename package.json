@@ -6,6 +6,8 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "config": "^3.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "font-awesome": "^4.7.0",
     "joi-browser": "^13.4.0",
     "jwt-decode": "^2.2.0",
@@ -18,8 +20,10 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-toastify": "^5.4.0",
     "redux": "^4.0.3",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^4.4.0",
     "tachyons": "^4.11.1"
   },
   "scripts": {
@@ -42,5 +46,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

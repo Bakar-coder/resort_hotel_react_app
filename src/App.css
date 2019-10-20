@@ -5,22 +5,24 @@
 }
 :root {
   --primaryColor: #af9a7d;
+  --greenColor: #218380;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
+  --greyColor: #777;
   --mainGrey: #ececec;
-  --darkGrey: #cfcfcf;
+  --darkGrey: #f8f8f8;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --lightShadow: 0.3rem 0.3rem 0.6rem 0.2rem rgba(0, 0, 0, 0.1);
+  --darkShadow: 0 0.3rem 10px rgba(0, 0, 0, 0.2);
 }
 /* globals */
 body {
   padding-top: 66px;
-  color: var(--mainBlack);
+  color: var(--greyColor);
   background: var(--mainWhite);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
 h1 {
@@ -31,26 +33,31 @@ h1 {
 h2 {
   font-size: 2em;
   margin-bottom: 0.75em;
+  color: var(--mainBlack);
 }
 h3 {
   font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1em;
+  color: var(--mainBlack);
 }
 h4 {
   font-size: 1.2em;
   line-height: 1.25;
   margin-bottom: 1.25em;
+  color: var(--mainBlack);
 }
 h5 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.5em;
+  color: var(--mainBlack);
 }
 h6 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.5em;
+  color: var(--mainBlack);
 }
 
 .btn-primary {
@@ -94,7 +101,7 @@ h6 {
   left: 0;
   width: 100%;
   padding: 0.75rem 2rem;
-  background: var(--offWhite);
+  background: var(--greenColor);
   z-index: 1;
 }
 .nav-header {
@@ -121,7 +128,7 @@ h6 {
   display: block;
   text-decoration: none;
   padding: 1rem 0;
-  color: var(--mainBlack);
+  color: var(--mainWhite);
   transition: var(--mainTransition);
   text-align: center;
   font-size: 1rem;
@@ -143,6 +150,7 @@ h6 {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
+    justify-content: space-between;
   }
   .nav-links {
     height: auto;
@@ -159,20 +167,21 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 66px);
-  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  background: url('./images/defaultBcg4.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 4px solid var(--primaryColor);
 }
 .roomsHero {
-  background-image: url("./images/room-2.jpeg");
+  background-image: url('./images/room-hero.jpg');
   min-height: 60vh;
 }
 /* End of Hero */
 /* Banner */
 .banner {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
   color: var(--mainWhite);
   padding: 2rem 1rem;
   text-align: center;
@@ -212,7 +221,7 @@ h6 {
 /* Title */
 .section-title {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 .section-title h4 {
   font-size: 2rem;
@@ -252,6 +261,7 @@ h6 {
 }
 .services h6 {
   letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
 }
 .services p {
   width: 80%;
@@ -307,6 +317,8 @@ h6 {
 
 .img-container {
   position: relative;
+  padding: 4px 4px 0 4px;
+  background: var(--greenColor);
 }
 .img-container img {
   width: 100%;
@@ -317,10 +329,11 @@ h6 {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--greenColor);
   color: var(--mainWhite);
   padding: 0.3rem 0.6rem 0.5rem;
-  border-bottom-right-radius: 1rem;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
   font-size: 0.5rem;
   text-align: center;
   transition: var(--mainTransition);
@@ -329,6 +342,7 @@ h6 {
   margin-bottom: 0;
   font-size: 0.9rem;
   font-weight: 300;
+  color: var(--mainWhite);
   letter-spacing: var(--mainSpacing);
 }
 .room-link {
@@ -351,7 +365,8 @@ h6 {
   transform: translate(-50%, -50%) scale(1);
 }
 .room-info {
-  background: var(--darkGrey);
+  background: var(--greenColor);
+  color: var(--mainWhite);
   text-transform: capitalize;
   padding: 0.5rem 0;
   text-align: center;
