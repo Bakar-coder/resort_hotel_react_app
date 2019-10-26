@@ -15,7 +15,7 @@
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 0.3rem 0.3rem 0.6rem 0.2rem rgba(0, 0, 0, 0.1);
-  --darkShadow: 0 0.3rem 10px rgba(0, 0, 0, 0.2);
+  --darkShadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 /* globals */
 body {
@@ -167,14 +167,14 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 66px);
-  background: url('./images/defaultBcg4.jpg') center/cover no-repeat;
+  background: url("./images/defaultBcg4.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 4px solid var(--primaryColor);
 }
 .roomsHero {
-  background-image: url('./images/room-hero.jpg');
+  background-image: url("./images/room-hero.jpg");
   min-height: 60vh;
 }
 /* End of Hero */
@@ -317,8 +317,6 @@ h6 {
 
 .img-container {
   position: relative;
-  padding: 4px 4px 0 4px;
-  background: var(--greenColor);
 }
 .img-container img {
   width: 100%;
@@ -329,8 +327,8 @@ h6 {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--greenColor);
-  color: var(--mainWhite);
+  background: var(--mainWhite);
+  color: var(--greenColor);
   padding: 0.3rem 0.6rem 0.5rem;
   border-bottom-right-radius: 2rem;
   border-top-right-radius: 2rem;
@@ -341,8 +339,8 @@ h6 {
 .price-top h6 {
   margin-bottom: 0;
   font-size: 0.9rem;
-  font-weight: 300;
-  color: var(--mainWhite);
+  font-weight: 400;
+  color: var(--greenColor);
   letter-spacing: var(--mainSpacing);
 }
 .room-link {
@@ -365,10 +363,10 @@ h6 {
   transform: translate(-50%, -50%) scale(1);
 }
 .room-info {
-  background: var(--greenColor);
-  color: var(--mainWhite);
+  background: var(--mainWhite);
+  color: var(--greenColor);
   text-transform: capitalize;
-  padding: 0.5rem 0;
+  padding: 1.2rem 0;
   text-align: center;
   font-weight: 700;
   letter-spacing: var(--mainSpacing);

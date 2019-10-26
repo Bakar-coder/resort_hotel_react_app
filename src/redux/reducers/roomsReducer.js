@@ -1,4 +1,11 @@
-import { GET_ROOMS, SET_FEATURED, GET_ROOM, SORT_ROOMS } from '../types';
+import {
+  GET_ROOMS,
+  SET_FEATURED,
+  GET_ROOM,
+  SORT_ROOMS,
+  SET_MAX_PRICE,
+  SET_MAX_SIZE
+} from "../types";
 
 const roomsState = {
   rooms: [],
@@ -6,6 +13,7 @@ const roomsState = {
   featuredRooms: [],
   sortedRooms: [],
   loading: true,
+  type: "all",
   capacity: 1,
   price: 0,
   maxPrice: 0,
@@ -23,6 +31,7 @@ export default (state = roomsState, action) => {
       return {
         ...state,
         rooms: payload,
+        sortedRooms: payload,
         loading: false
       };
     case GET_ROOM:
@@ -35,7 +44,17 @@ export default (state = roomsState, action) => {
         ...state,
         featuredRooms: [...state.rooms].filter(room => room.featured)
       };
+    case SET_MAX_PRICE:
+      return {
+        ...state,
+        maxPrice: Math.max(...state.rooms.map(item => item.price))
+      };
+    case SET_MAX_SIZE:
+      return {
+        ...state,
+        maxSize: Math.max(...state.rooms.map(item => item.size))
+      };
     default:
       return state;
   }
-}
+};

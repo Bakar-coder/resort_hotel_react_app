@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 import Room from "./Room";
 
-const RoomsList = ({rooms}) => {
+const RoomsList = ({ rooms }) => {
   return rooms.length > 0 ? (
-    <section className='roomslist'>
+    <section className="roomslist">
       <div className="roomslist-center">
-        {
-          rooms.map(room => <Room key={room.id} room={room}/>)
-        }
+        {rooms.map(room => (
+          <Room key={room.id} room={room} />
+        ))}
       </div>
     </section>
-  ) : <div>No Match Found...</div>
+  ) : (
+    <div className="empty-search">No Match Found...</div>
+  );
 };
 
 export default RoomsList;
