@@ -4,14 +4,16 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
-  --greenColor: #218380;
+  --primaryColor: #ffcf43;
+  --greenColor: #01345b;
+  --lightGreen: #5ce0d8;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
   --greyColor: #777;
   --mainGrey: #ececec;
   --darkGrey: #f8f8f8;
+  --blackColor: #000;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 0.3rem 0.3rem 0.6rem 0.2rem rgba(0, 0, 0, 0.1);
@@ -24,6 +26,10 @@ body {
   background: var(--mainWhite);
   font-family: Nunito, Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 h1 {
   font-size: 3em;
@@ -64,17 +70,17 @@ h6 {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
-  background: var(--primaryColor);
+  color: var(--mainWhite);
+  background: var(--blackColor);
   padding: 0.4rem 0.9rem;
-  border: 3px solid var(--primaryColor);
+  border: 3px solid var(--blackColor);
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
 }
 .btn-primary:hover {
   background: transparent;
-  color: var(--primaryColor);
+  color: var(--blackColor);
 }
 .loading {
   text-transform: capitalize;
@@ -104,10 +110,35 @@ h6 {
   background: var(--greenColor);
   z-index: 1;
 }
+
+.logo h3 {
+  height: 100%;
+  margin-bottom: 0;
+  color: var(--mainWhite);
+  padding: 8px 16px 8px 0;
+  border: 3px solid var(--primaryColor);
+  border-radius: 0 24px 24px 0;
+  -webkit-border-radius: 0 24px 24px 0;
+  -moz-border-radius: 0 24px 24px 0;
+  -ms-border-radius: 0 24px 24px 0;
+  -o-border-radius: 0 24px 24px 0;
+}
+
+.logo span {
+  background-color: var(--primaryColor);
+  padding: 6px;
+  color: var(--greenColor);
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
 .nav-header {
   display: flex;
   justify-content: space-between;
 }
+
 .nav-btn {
   background: transparent;
   border: none;
@@ -160,6 +191,7 @@ h6 {
   .nav-links a {
     margin: 0 1rem;
     padding: 0.5rem 0;
+    background-color: var(--greenColor);
   }
 }
 /* end of navbar */
@@ -167,22 +199,22 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 66px);
-  background: url("./images/defaultBcg4.jpg") center/cover no-repeat;
+  background: url('./images/defaultBcg3.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 4px solid var(--primaryColor);
 }
 .roomsHero {
-  background-image: url("./images/room-hero.jpg");
+  background-image: url('./images/room-hero.jpg');
   min-height: 60vh;
 }
 /* End of Hero */
 /* Banner */
 .banner {
   display: inline-block;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
-  color: var(--mainWhite);
+  background: rgba(255, 207, 67, 0.8);
+  color: var(--greenColor);
   padding: 2rem 1rem;
   text-align: center;
   text-transform: capitalize;
@@ -191,10 +223,14 @@ h6 {
 .banner h1 {
   font-size: 2.5rem;
 }
+
+.banner p {
+  color: var(--mainWhite);
+}
 .banner div {
   width: 10rem;
   height: 5px;
-  background: var(--primaryColor);
+  background: var(--greenColor);
   margin: 1.7rem auto;
 }
 .banner p {
@@ -351,7 +387,7 @@ h6 {
   transition: all 0.3s linear;
 }
 .img-container:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(1, 52, 91, 0.85);
 }
 .img-container:hover img {
   opacity: 0.3;
@@ -361,6 +397,9 @@ h6 {
 }
 .img-container:hover .room-link {
   transform: translate(-50%, -50%) scale(1);
+  color: var(--blackColor);
+  background: var(--primaryColor);
+  border: none;
 }
 .room-info {
   background: var(--mainWhite);
